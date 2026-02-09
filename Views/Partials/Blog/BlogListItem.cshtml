@@ -1,0 +1,23 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.BlogDetails>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+
+<div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
+    <div class="rounded overflow-hidden">
+        <div class="position-relative overflow-hidden">
+            @if(Model.BlogImage != null){
+                <img class="img-fluid w-100" src="@Model.BlogImage.Url() " alt="@Model.Name">
+            }
+            else{
+                <img class="img-fluid w-100" src="https://via.placeholder.com/400x250" alt="@Model.Name">
+            }
+            <div class="portfolio-overlay">
+                <a class="btn btn-square btn-outline-light mx-1" href="@Model.Url()"><i class="fa fa-eye"></i></a>
+            </div>
+        </div>
+        <div class="bg-light p-4">
+            <h5 class="lh-base mb-0">@Model.Name</h5>
+        </div>
+    </div>
+</div>
